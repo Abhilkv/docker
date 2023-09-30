@@ -6,9 +6,10 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/mydatabase', {
+mongoose.connect('mongodb://admin:secret@localhost:27017/user-account', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
+  authSource: 'admin', // Specify the authentication source
 });
 
 // Create a Person schema
