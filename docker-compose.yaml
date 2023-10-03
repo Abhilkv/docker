@@ -11,7 +11,7 @@ services:
     networks:
       - networkName 
     volumes:
-      - ./data/db:/data/db  # Optional: Mount a volume for persistent data
+      - mongo-data:/data/db     #named volume  
 
   mongo-express:
     image: mongo-express
@@ -33,6 +33,9 @@ services:
       - "3001:3000"
     networks:
       - networkName 
+volumes:
+  mongo-data:
+    driver: local          #specifies the docker that the data should be created on the local file system 
 
 networks:
   networkName:
