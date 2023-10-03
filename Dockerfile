@@ -22,6 +22,6 @@ EXPOSE 3000
 CMD ["node", "server.js"]
     # runs the command node server.js
 
-# docker build -t my-node-app .
+# docker build -t my-node-app .  /  docker build -t my-node-app:1.0 .
 # docker run -p 3000:3000 my-node-app
 
